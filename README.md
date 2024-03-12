@@ -2,7 +2,7 @@ CodeQuizMaster
 Arabs Team
 team members :
 Alnaser Sajjad
-Safita Malak
+Safiya Malak
 CodeQuizMaster: Unlock Your Programming Potential
 
 Dive into the world of coding with CodeQuizMaster, your ultimate web-based learning companion. Developed using robust technologies like Java, Maven, and Spring Boot, and supported by a reliable MySQL backend, this interactive platform is designed to enhance your programming knowledge through engaging multiple-choice questions.

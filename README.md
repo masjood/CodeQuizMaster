@@ -12,3 +12,4 @@ Whether you're a beginner or looking to polish your skills, CodeQuizMaster offer
 Join CodeQuizMaster today and start your path to becoming a programming pro!
 
 WEB Sketch: "https://www.figma.com/file/UD04dRmYFPDGMfU4PFmiKv/Untitled?type=design&node-id=0%3A1&mode=design&t=qtruTPN7hDebDlLs-1"
+Trello: "https://trello.com/b/CU1MsEE1/kanban-template"

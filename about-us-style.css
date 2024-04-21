@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: start;
+    position: relative;
+}
+
+.logo {
+    block-size: 50px; /* Small Size */
+    position: absolute;
+    inset-block-start: 0px;
+    inset-inline-start: 0px;
+}
+
+h1 {
+    margin-inline-start: 80px;
+}
+
+.content {
+    padding: 20px;
+    background: white;
+    margin: 15px;
+    border-radius: 8px;
+}
+
+.team-member {
+    margin-block-end: 20px;
+}
+
+.team-member h3 {
+    color: #007bff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #007bff;
+    color: white;
+    position: fixed;
+    inset-block-end: 0;
+    inline-size: 100%;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}

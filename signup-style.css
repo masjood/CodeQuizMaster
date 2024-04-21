@@ -1,0 +1,88 @@
+body, html {
+    block-size: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('images/register.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    position: relative; /* Needed to position logo-container absolutely */
+}
+
+#signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    block-size: 100%;
+}
+
+#logo-container {
+    position: fixed; /* Positioning absolutely relative to the body */
+    inset-block-start: 0; /* At the very top of the page */
+    inset-inline-start: 0; /* At the very left of the page */
+    padding: 0px; /* Padding from the edge of the page */
+}
+
+#logo-container img {
+    max-inline-size: 120px; /* Adjust as needed */
+    max-block-size: 110px; /* Adjust as needed */
+}
+
+
+
+#signup-form {
+    background-color: rgba(128, 0, 128, 0.8); /* Purple with some transparency */
+    padding: 40px;
+    border-radius: 10px;
+    inline-size: 100%;
+    max-inline-size: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center the form elements */
+}
+
+#signup-form h2 {
+    color: #FFF;
+    margin-block-end: 30px;
+}
+
+.input-group {
+    margin-block-end: 20px;
+}
+
+.input-group label {
+    color: #FFF;
+    display: block;
+    margin-block-end: 5px;
+}
+
+.input-group input {
+    inline-size: 100%;
+    padding: 10px;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    background: transparent;
+    color: #FFF;
+}
+
+button {
+    inline-size: 100%;
+    padding: 10px;
+    background-color: #FFF;
+    border: none;
+    border-radius: 5px;
+    color: #800080; /* Matching the purple background */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #DDD;
+}
+
+@media (max-inline-size: 768px) {
+    /* Responsive adjustments */
+    #signup-form {
+        inline-size: 90%;
+    }
+}

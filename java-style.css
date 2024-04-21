@@ -1,0 +1,90 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    block-size: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: url('images/Quiz.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+header {
+    inline-size: 100%;
+    padding: 20px; /* You can adjust this value as per your design */
+    box-sizing: border-box;
+    position: fixed; /* or 'fixed' if you want it to stay at the top when scrolling */
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    z-index: 1000; /* Ensure the header is above other content */
+}
+
+.logo {
+    display: block;
+    max-inline-size: 110px;
+    margin: 0;
+    padding: 0;
+    block-size: 120; /* Maintain aspect ratio */
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-block-start: 80px; /* Add top margin to avoid overlap with header */
+}
+  
+  .quiz {
+    background-color: rgba(75, 75, 75, 0.8); /* Adjust the background as needed */
+    border-radius: 10px;
+    padding: 20px;
+    inline-size: 90%;
+    max-inline-size: 600px;
+    margin: 40px auto;
+  }
+  
+  .question h2 {
+    background-color: #663399;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    min-inline-size: 250px;
+  }
+  
+  .answers {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .answers li {
+    background-color: #333;
+    margin-block-end: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .answers li:hover {
+    background-color: #444;
+  }
+  
+  .next-button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-block-start: 20px;
+  }
+  
+  .next-button:hover {
+    background-color: #0055bb;
+  }
+  

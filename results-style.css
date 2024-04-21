@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#logo {
+    block-size: 50px; /* Adjusted for a smaller logo */
+    inline-size: auto; /* Maintains aspect ratio */
+}
+
+.results-container {
+    inline-size: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}

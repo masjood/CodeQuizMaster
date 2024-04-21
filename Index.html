@@ -11,43 +11,36 @@
         <div id="logo-container">
             <img src="images/Logo.png" alt="CodeMaster Logo">
         </div>
-        <div id="title-container">
-            <div class="title">CodeQuizMaster</div>
-        </div>
         <div id="auth-container">
-            <button id="login">Login</button>
-            <button id="signup">Signup</button>
+            <a href="login.html" id="login" class="auth-button">Login</a>
+            <a href="signup.html" id="signup" class="auth-button">Signup</a>
         </div>
     </header>
 
-    <div class="container">
-        <!-- ... -->
-<aside>
-    <div class="sidebar-card">
+    <div class="welcome-message">
         <h2>Welcome to CodeQuizMaster</h2>
-        <p class="sidebar-text">Embark on your coding journey with CodeQuizMaster! Whether you're a seasoned developer or just starting out, our platform offers a diverse collection of programming challenges across Java, Python, HTML, and CSS.</p>
-    </div>
-</aside>
-<!-- ... -->
-
-
-        <main>
-            <div class="main-header">
-                <h1>Pick your language</h1>
-            </div>
-            <div class="language-grid">
-                <div class="language-card">Java</div>
-                <div class="language-card">Python</div>
-                <div class="language-card">HTML</div>
-                <div class="language-card">CSS</div>
-            </div>
-        </main>
+        <p>Embark on your coding journey with CodeQuizMaster! Whether you're a seasoned developer or just starting out, our platform offers a diverse collection of programming challenges across Java, Python, HTML, and CSS.</p>
     </div>
 
-<footer>
-    <div class="footer-container">
-        <a id="about-link" href="#about" class="footer-link">About Us</a>
-        <a id="contact-link" href="#contact" class="footer-link">Contact Us</a>
-        <a id="resources-link" href="#resources" class="footer-link">Resources</a>
-    </div>
-</footer>
+    <main>
+        <div class="main-header">
+            <h1>Pick your language</h1>
+        </div>
+        <div class="language-grid">
+            <a href="java.html" class="language-card">Java</a>
+            <a href="python.html" class="language-card">Python</a>
+            <a href="html.html" class="language-card">HTML</a>
+            <a href="css.html" class="language-card">CSS</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <a href="about-us.html">About Us</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="resources.html">Resources</a>
+        </div>
+    </footer>
+    <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,225 +1,145 @@
-body, html {
+body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     block-size: 100%;
-    background-color: #f9f9f9;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 header {
-    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 0px;
+    flex-wrap: wrap;
 }
 
-#logo-container {
-    text-align: start; 
-    padding: 10px; 
-    display: flex; 
-    align-items: center; 
-}
 
 #logo-container img {
-    border-radius: 50%; 
-    inline-size: 80px; 
-    block-size: 80px; 
-    object-fit: cover; 
-}
-
-#title-container .title {
-    background: linear-gradient(145deg, #6C8C9D, #9FD3C7); 
-    border-radius: 30px; 
-    padding: 15px 80px; 
-    text-align: center;
-    color: #ffffff; 
-    font-size: 1.5em; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s, box-shadow 0.3s; 
-}
-
-#title-container .title:hover {
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
-}
-
-#auth-container {
-    display: flex;
-    align-items: center;
+    inline-size: 120px;
+    block-size: 110px;
 }
 
 #auth-container button {
-    border: none;
+    border: 2px solid #fff;
+    padding: 10px 20px;
     margin-inline-start: 10px;
-    padding: 12px 25px; 
-    border-radius: 25px; 
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #auth-container button:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    background-color: #fff;
+    color: #000;
+}
+.auth-button {
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    margin-inline-start: 10px;
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* Removes the underline from the link */
+    display: inline-block; /* Allows padding and border to be applied correctly */
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-#login {
-    background-color: #50B2C0; 
-    color: white; 
-}
-
-#signup {
-    background-color: #F2994A; 
-    color: white; 
-}
-
-#login:hover,
-#signup:hover {
-    filter: brightness(90%); 
-}
-
-
-.container {
-    display: flex;
-    max-inline-size: 1200px;
-    margin: 80px auto; 
-    gap: 20px; 
-}
-
-aside {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sidebar-card {
-    background: linear-gradient(145deg, #e6e6e6, #ffffff); 
-    border-radius: 20px; 
-    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.2), 
-                -8px -8px 16px rgba(255, 255, 255, 0.1); 
-    padding: 40px;
-    max-inline-size: 90%; 
-    text-align: start;
-    transition: all 0.3s ease; 
-}
-
-.sidebar-card:hover {
-    box-shadow: 16px 16px 32px rgba(0, 0, 0, 0.2), 
-                -12px -12px 24px rgba(255, 255, 255, 0.1);
-    transform: scale(1.02); 
-}
-
-.sidebar-card h2 {
-    color: #324d67; 
-    margin-block-end: 20px;
-    font-weight: 600; 
-    font-size: 1.5em; 
-}
-
-.sidebar-text {
-    color: #405d7d; 
-    font-size: 1.05em; 
-    line-height: 1.7; 
+.auth-button:hover {
+    background-color: #fff;
+    color: #000;
 }
 
 
+.welcome-message {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.welcome-message h2 {
+    font-size: 2.5em;
+    margin-block-end: 0.5em;
+}
+
+.welcome-message p {
+    font-size: 1em;
+    max-inline-size: 600px;
+    margin: auto;
+}
 
 main {
-    flex: 3;
-    margin-inline-start: 20px;
-    text-align: center;
+    padding: 20px;
 }
 
 .main-header h1 {
-    background: linear-gradient(145deg, #6C8C9D, #9FD3C7); 
-    color: #fff; 
-    display: inline-block;
-    padding: 15px 60px; 
-    border-radius: 30px; 
-    margin-block-end: 30px; 
-    font-size: 2em; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s, box-shadow 0.3s; 
+    text-align: center;
+    font-size: 2em;
 }
 
-.main-header h1:hover {
-    transform: translateY(-2px); 
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
-}
 .language-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(2, auto); 
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 20px;
+    padding: 20px 0;
 }
 
 .language-card {
-    background: linear-gradient(145deg, #E0E0E0, #FFFFFF); 
-    border-radius: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2em;
-    color: #333; 
-    transition: transform 0.3s, box-shadow 0.3s; 
-    block-size: 150px; 
-    padding: 20px; 
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s;
 }
 
 .language-card:hover {
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    background-color: rgba(255, 255, 255, 0.1);
 }
-
-
-.language-card:nth-child(1),
-.language-card:nth-child(2) {
-    grid-row: 1; 
-}
-
-.language-card:nth-child(3),
-.language-card:nth-child(4) {
-    grid-row: 2; 
-}
-
-
 
 footer {
-    background: linear-gradient(145deg, #6C8C9D, #9FD3C7); 
     padding: 20px 0;
-    position: relative;
-    clear: both;
     text-align: center;
 }
 
 .footer-container {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-link {
-    display: inline-block;
-    margin: 0 10px;
-    background-color: #ffffff; 
-    color: #9FD3C7; 
+    color: #9FD3C7;
     padding: 8px 16px;
-    border-radius: 20px; 
     text-decoration: none;
-    font-size: 1em;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.footer-link:hover {
-    background-color: #f0f0f0; 
-    color: #333; 
+    margin: 0 10px;
 }
 
 @media (max-inline-size: 768px) {
+    .welcome-message p,
+    .language-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
     .footer-link {
-        display: block;
-        margin: 5px auto;
+        margin-block-end: 10px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    #auth-container {
+        margin-block-start:20px;
     }
 }

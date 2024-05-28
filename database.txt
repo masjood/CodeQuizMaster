@@ -1,0 +1,279 @@
+database:
+
+CREATE TABLE quizzes (
+  quiz_id INT AUTO_INCREMENT,
+  title VARCHAR(255),
+  PRIMARY KEY (quiz_id)
+);
+
+CREATE TABLE questions (
+  question_id INT AUTO_INCREMENT,
+  quiz_id INT,
+  text TEXT,
+  level VARCHAR(255),
+  PRIMARY KEY (question_id),
+  FOREIGN KEY (quiz_id) REFERENCES quizzes(quiz_id)
+);
+
+CREATE TABLE answers (
+  option_id INT AUTO_INCREMENT,
+  question_id INT,
+  option_text TEXT,
+  is_correct BOOLEAN,
+  PRIMARY KEY (option_id),
+  FOREIGN KEY (question_id) REFERENCES questions(question_id)
+);
+
+CREATE TABLE users (
+  user_id INT AUTO_INCREMENT,
+  username VARCHAR(255),
+  password VARCHAR(255), -- This should be hashed in a real implementation
+  PRIMARY KEY (user_id)
+);
+
+CREATE TABLE results (
+  result_id INT AUTO_INCREMENT,
+  user_id INT,
+  question_id INT,
+  selected_option INT,
+  is_correct BOOLEAN,
+  PRIMARY KEY (result_id),
+  FOREIGN KEY (user_id) REFERENCES users(user_id),
+  FOREIGN KEY (question_id) REFERENCES questions(question_id)
+);
+
+-- Create Quizzes
+INSERT INTO quizzes (title) VALUES 
+('Python Programming Quiz'), 
+('Java Programming Quiz'), 
+('HTML Basics Quiz'), 
+('CSS Fundamentals Quiz');
+
+-- Python Programming Quiz Questions (quiz_id assumed to be 1)
+INSERT INTO questions (quiz_id, text, level) VALUES
+(1, 'What is a correct syntax to output "Hello World" in Python?', 'Intermediate'),
+(1, 'How do you insert COMMENTS in Python code?', 'Intermediate'),
+(1, 'What is the correct way to create a function in Python?', 'Intermediate'),
+(1, 'Which method can be used to remove any whitespace from both the beginning and the end of a string?', 'Intermediate'),
+(1, 'Which operator is used in Python to check if two values are not equal?', 'Intermediate'),
+(1, 'What do we use to define a block of code in Python language?', 'Intermediate'),
+(1, 'What is the correct file extension for Python files?', 'Intermediate'),
+(1, 'How do you create a variable with the numeric value 5?', 'Intermediate'),
+(1, 'Which method can be used to return a string in upper case letters?', 'Intermediate'),
+(1, 'Which collection is ordered, changeable, and allows duplicate members?', 'Intermediate');
+
+-- Insert options for Python questions (assuming question_id 1-10)
+INSERT INTO answers (question_id, option_text, is_correct) VALUES
+(1, 'echo "Hello World";', FALSE),
+(1, 'p("Hello World")', FALSE),
+(1, 'print("Hello World")', TRUE),
+(1, 'console.log("Hello World");', FALSE),
+(2, '// This is a comment', FALSE),
+(2, '# This is a comment', TRUE),
+(2, '/* This is a comment */', FALSE),
+(2, '<!-- This is a comment -->', FALSE),
+(3, 'function myFunction():', FALSE),
+(3, 'create myFunction()', FALSE),
+(3, 'def myFunction():', TRUE),
+(3, 'function: myFunction()', FALSE),
+(4, 'trim()', FALSE),
+(4, 'ptrim()', FALSE),
+(4, 'strip()', TRUE),
+(4, 'cut()', FALSE),
+(5, '<>', FALSE),
+(5, '!=', TRUE),
+(5, '==!', FALSE),
+(5, '!==', FALSE),
+(6, 'Indentation', TRUE),
+(6, 'Brackets', FALSE),
+(6, 'Key phrases', FALSE),
+(6, 'None of the above', FALSE),
+(7, '.pyt', FALSE),
+(7, '.pt', FALSE),
+(7, '.py', TRUE),
+(7, '.python', FALSE),
+(8, 'int x = 5;', FALSE),
+(8, 'x = 5', TRUE),
+(8, 'x == 5', FALSE),
+(8, 'float x = 5', FALSE),
+(9, 'toUpperCase()', FALSE),
+(9, 'upper()', FALSE),
+(9, 'uppercase()', FALSE),
+(9, 'upperCase()', TRUE),
+(10, 'Dictionary', FALSE),
+(10, 'List', TRUE),
+(10, 'Tuples', FALSE),
+(10, 'Sets', FALSE);
+
+
+
+
+-- Insert Java Questions (assuming quiz_id = 2)
+INSERT INTO questions (quiz_id, text, level) VALUES
+(2, 'Which method signature is correct for main() in a Java application?', 'Intermediate'),
+(2, 'What keyword is used to inherit a class in Java?', 'Intermediate'),
+(2, 'Which of the following is not a valid Java identifier?', 'Intermediate'),
+(2, 'What is the default value of a boolean in Java?', 'Intermediate'),
+(2, 'How do you declare an array in Java?', 'Intermediate'),
+(2, 'What does the expression "int a = 20, b = 10; b = a-- - --a;" set b to?', 'Intermediate'),
+(2, 'Which class do you need to use ArrayList in Java?', 'Intermediate'),
+(2, 'What is the correct way to handle exceptions in Java?', 'Intermediate'),
+(2, 'What is the access level of a class defined without any access modifiers?', 'Intermediate'),
+(2, 'What is the purpose of the final keyword in Java?', 'Intermediate');
+
+-- Insert Options for Java Questions
+INSERT INTO answers (question_id, option_text, is_correct) VALUES
+(11, 'public static int main(String[] args)', FALSE),
+(11, 'public static void main(String[] args)', TRUE),
+(11, 'public void main(String[] args)', FALSE),
+(11, 'static void main(String[] args)', FALSE),
+(12, 'extends', TRUE),
+(12, 'inherits', FALSE),
+(12, 'subclass', FALSE),
+(12, 'derive', FALSE),
+(13, '_myvar', FALSE),
+(13, '2myvar', TRUE),
+(13, 'myVar', FALSE),
+(13, 'my_var', FALSE),
+(14, 'true', FALSE),
+(14, 'false', TRUE),
+(14, 'null', FALSE),
+(14, '0', FALSE),
+(15, 'int arr[];', TRUE),
+(15, 'int arr[] = new int[5];', TRUE),
+(15, 'int arr = new int[5];', FALSE),
+(15, 'array int[5];', FALSE),
+(16, '18', TRUE),
+(16, '19', FALSE),
+(16, '20', FALSE),
+(16, '21', FALSE),
+(17, 'java.util.List', FALSE),
+(17, 'java.util.Set', FALSE),
+(17, 'java.util.ArrayList', TRUE),
+(17, 'java.util.Array', FALSE),
+(18, 'Using try and catch blocks', TRUE),
+(18, 'Using break and continue', FALSE),
+(18, 'Using do and while loops', FALSE),
+(18, 'Using if and else statements', FALSE),
+(19, 'public', FALSE),
+(19, 'private', FALSE),
+(19, 'protected', FALSE),
+(19, 'package-private', TRUE),
+(20, 'To indicate that a variable may not be modified', TRUE),
+(20, 'To indicate that a method can be executed asynchronously', FALSE),
+(20, 'To indicate that the code is safe to ignore', FALSE),
+(20, 'To enhance performance', FALSE);
+
+
+-- Insert HTML Questions (assuming quiz_id = 3)
+INSERT INTO questions (quiz_id, text, level) VALUES
+(3, 'What does HTML stand for?', 'Intermediate'),
+(3, 'Which HTML element is used to define important text?', 'Intermediate'),
+(3, 'How can you make a numbered list in HTML?', 'Intermediate'),
+(3, 'Which HTML element is used to define a table header?', 'Intermediate'),
+(3, 'How do you create a hyperlink in HTML?', 'Intermediate'),
+(3, 'What is the purpose of the alt attribute in an image tag?', 'Intermediate'),
+(3, 'Which doctype is correct for HTML5?', 'Intermediate'),
+(3, 'How do you insert a comment in HTML?', 'Intermediate'),
+(3, 'Which HTML element is used to specify a footer for a document or section?', 'Intermediate'),
+(3, 'What is the correct HTML element for inserting a line break?', 'Intermediate');
+
+-- Insert Options for HTML Questions
+INSERT INTO answers (question_id, option_text, is_correct) VALUES
+(21, 'Hyper Text Markup Language', TRUE),
+(21, 'Home Tool Markup Language', FALSE),
+(21, 'Hyperlinks and Text Markup Language', FALSE),
+(21, 'Hyper Tool Multi Language', FALSE),
+(22, '<strong>', FALSE),
+(22, '<important>', FALSE),
+(22, '<b>', FALSE),
+(22, '<em>', TRUE),
+(23, '<ol>', TRUE),
+(23, '<ul>', FALSE),
+(23, '<dl>', FALSE),
+(23, '<list>', FALSE),
+(24, '<thead>', TRUE),
+(24, '<header>', FALSE),
+(24, '<th>', FALSE),
+(24, '<top>', FALSE),
+(25, '<a href="url">link</a>', TRUE),
+(25, '<link "url">', FALSE),
+(25, '<href>url</href>', FALSE),
+(25, '<url>link</url>', FALSE),
+(26, 'To display an image', FALSE),
+(26, 'To provide text for screen readers', TRUE),
+(26, 'To increase image resolution', FALSE),
+(26, 'To specify image size', FALSE),
+(27, '<!DOCTYPE html>', TRUE),
+(27, '<!DOCTYPE HTML PUBLIC>', FALSE),
+(27, '<!DOCTYPE HTML5>', FALSE),
+(27, '<!HTML>', FALSE),
+(28, '<!-- comment -->', TRUE),
+(28, '<comment>', FALSE),
+(28, '// comment', FALSE),
+(28, '/* comment */', FALSE),
+(29, '<footer>', TRUE),
+(29, '<bottom>', FALSE),
+(29, '<foot>', FALSE),
+(29, '<section footer="true">', FALSE),
+(30, '<br>', TRUE),
+(30, '<break>', FALSE),
+(30, '<lb>', FALSE),
+(30, '<line>', FALSE);
+
+
+-- Insert CSS Questions (assuming quiz_id = 4)
+INSERT INTO questions (quiz_id, text, level) VALUES
+(4, 'What does CSS stand for?', 'Intermediate'),
+(4, 'Which property is used to change the background color of an element?', 'Intermediate'),
+(4, 'How do you add a comment in CSS?', 'Intermediate'),
+(4, 'Which CSS property controls the text size?', 'Intermediate'),
+(4, 'How do you make each word in a text start with a capital letter?', 'Intermediate'),
+(4, 'What property is used to change the font of an element?', 'Intermediate'),
+(4, 'How do you display hyperlinks without an underline?', 'Intermediate'),
+(4, 'Which property is used to change the left margin of an element?', 'Intermediate'),
+(4, 'What does "font-weight: bold;" do?', 'Intermediate'),
+(4, 'How can you create a flexbox container?', 'Intermediate');
+
+-- Insert Options for CSS Questions
+INSERT INTO answers (question_id, option_text, is_correct) VALUES
+(31, 'Cascading Style Sheets', TRUE),
+(31, 'Creative Style Sheets', FALSE),
+(31, 'Colorful Style Sheets', FALSE),
+(31, 'Computer Style Sheets', FALSE),
+(32, 'background-color', TRUE),
+(32, 'background-image', FALSE),
+(32, 'bgcolor', FALSE),
+(32, 'color', FALSE),
+(33, '/* This is a comment */', TRUE),
+(33, '// This is a comment', FALSE),
+(33, '<!-- This is a comment -->', FALSE),
+(33, '** This is a comment **', FALSE),
+(34, 'font-size', TRUE),
+(34, 'text-size', FALSE),
+(34, 'font-style', FALSE),
+(34, 'text-style', FALSE),
+(35, 'text-transform: capitalize;', TRUE),
+(35, 'text-style: capitalize;', FALSE),
+(35, 'font-transform: capitalize;', FALSE),
+(35, 'text-capitalize: true;', FALSE),
+(36, 'font-family', TRUE),
+(36, 'font-style', FALSE),
+(36, 'typeface', FALSE),
+(36, 'font-type', FALSE),
+(37, 'text-decoration: none;', TRUE),
+(37, 'underline: none;', FALSE),
+(37, 'text-line: none;', FALSE),
+(37, 'decoration: none;', FALSE),
+(38, 'margin-left', TRUE),
+(38, 'padding-left', FALSE),
+(38, 'indent', FALSE),
+(38, 'align-left', FALSE),
+(39, 'Makes the text bold', TRUE),
+(39, 'Increases the font size', FALSE),
+(39, 'Changes the font color to black', FALSE),
+(39, 'Makes the text italic', FALSE),
+(40, 'display: flex;', TRUE),
+(40, 'display: block;', FALSE),
+(40, 'display: grid;', FALSE),
+(40, 'flex-wrap: wrap;', FALSE);
